@@ -1,0 +1,14 @@
+import Header from "../Header";
+
+
+// 
+export default function PageWrapper({children, showButton = true}){
+    return (
+        <div className="w-full h-screen flex flex-col">
+            <Header showButton={showButton} />
+            <div className="W-full h-screen bg-gradient-to-t from-[#020304] to-[#181d29]">
+                {children}
+            </div>
+        </div>
+    )
+}
