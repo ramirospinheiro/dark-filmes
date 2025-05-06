@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // devIdicators:false desliga o botao de auxilio
+  reactStrictMode: true, devIndicators:false
 };
 
 export default nextConfig;
