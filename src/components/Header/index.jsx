@@ -11,7 +11,7 @@ export default function Header({showButton = true}){
         {showButton && (
             <button onClick={() => window.location.href = "/cadastrar"} className="w-[150px] h-[80%] rounded-md bg-[#9b87f5] hover:bg-[#9b87f5]/70 cursor-pointer">Adicionar Filme</button>
         )}
-        {/* modelo hover => hover:[cor]/x deixa a cor do background 30% mais transparente */}
+        {/* modelo hover => hover:[cor]/x deixa a cor do background x% mais transparente */}
         </header>
     )
 }
