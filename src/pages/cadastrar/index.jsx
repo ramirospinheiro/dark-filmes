@@ -1,9 +1,9 @@
-import instance from "@/api/instance";
+import instance from "@/api/instance"
 import CustomInput from "@/components/CustomInput"
 import CustomSelect from "@/components/CustomSelect"
 import PageWrapper  from "@/components/PageWrapper"
 import { useState } from "react"
-import { toast } from "react-toastify";
+import { toast } from "react-toastify"
 
 export default function Cadastrar(){
     // hooks sempre ficam entre a declaração da função e o retorno dela
@@ -19,7 +19,12 @@ export default function Cadastrar(){
     async function handleSubmit(event){
         // prevent default previne o comportamento padrao da pagina, no caso a tag form de atualizar a pagina sem conferencias e perdendo os dados preenchidos
         event.preventDefault();
-        
+
+        if(!titulo || !diretor || !ano || !genero || !nota || !sinopse || !banner){
+            toast.error("Preencha todos os campos")
+            return;
+        }
+
         try {
             await instance.post("/api/movies", {
                 titulo: titulo,
@@ -50,7 +55,7 @@ export default function Cadastrar(){
         <PageWrapper showButton = {false}>
             <div className="w-full h-full py-[40px] px-[70px] flex flex-col">
                 <h1 className="text-[30px] font-bold text-[#9a86f4]">Adicione um novo filme</h1>
-                <p className="text-[20px] text-gray-500">Preencha o formulário abaixo para adicionar um novo filme à sua coleção</p>
+                <p className="text-[20px] text-[#8A898C]">Preencha o formulário abaixo para adicionar um novo filme à sua coleção</p>
                 <div className="w-full flex justify-center pt-[40px]">
                     <form
                     onSubmit={handleSubmit}

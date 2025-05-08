@@ -3,7 +3,7 @@ import { LuFilm } from "react-icons/lu";
 export default function Header({showButton = true}){
     return (
         <header className="w-full h-[60px] flex bg-[#0c0f15] justify-between items-center pr-2"> 
-        <div onClick={() => window.location.href = "../"} className="cursor-pointer flex h-full gap-2 items-center justify-center pl-2">
+        <div onClick={() => window.location.href = "/"} className="cursor-pointer flex h-full gap-2 items-center justify-center pl-2">
             <LuFilm  color="#9b87f5" size={35}/>
             <h2 className="font-bold text[25px]">Dark Films</h2>
         </div>

@@ -9,6 +9,6 @@ export default function App({ Component, pageProps }) {
       theme="dark"
       
     />
-    <Component {...pageProps} />;
+    <Component {...pageProps} />
   </>
 }

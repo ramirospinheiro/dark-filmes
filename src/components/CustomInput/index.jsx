@@ -1,4 +1,4 @@
-export default function CustomInput({label, placeholder, type, onChange}){
+export default function CustomInput({label, placeholder, type, onChange, value}){
   return (
     <div className="flex flex-col w-full gap-2">
         <label className="text-[17px] font-bold">{label}</label>
@@ -7,6 +7,7 @@ export default function CustomInput({label, placeholder, type, onChange}){
             placeholder={placeholder}
             type={type}      
             onChange = {onChange}
+            value={value}
         />
     </div>
   )
