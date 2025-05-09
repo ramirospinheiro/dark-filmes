@@ -1,8 +1,22 @@
+import instance from "@/api/instance";
 import CardFilme from "@/components/CardFilme"
 import PageWrapper from "@/components/PageWrapper"
+import { useEffect, useState } from "react"
 
 
 export default function Home(){
+  //hook
+  const [filmes, setFilmes] = useState([])
+
+  // useEffect é utilizado para fazer requisiçoes à api ao carregar a pagina e ao filtrar os itens a mostra
+  // modelo : useEffect(() => {} , [])
+  useEffect(() => {
+    async function getFilmes(){
+      const response = await instance.get("/api/movies");
+      setFilmes(response.data)
+    }
+    getFilmes()
+  } , []); 
 
   return(
     <PageWrapper>
@@ -12,14 +26,16 @@ export default function Home(){
       </div>
       {/* flex-wrap mostra em grad adaptavel a zoom */}
       <div className="w-full h-auto flex flex-wrap justify-center gap-3">
-        <CardFilme/>
-        <CardFilme/>
-        <CardFilme/>
-        <CardFilme/>
-        <CardFilme/>
-        <CardFilme/>
-        <CardFilme/>
-        <CardFilme/>
+        {
+          filmes.map((filme) => {
+            return(
+              <CardFilme
+                filme={filme}
+                key={filme.id}
+              />
+            )
+          })
+        }
       </div>
     </PageWrapper>
   )

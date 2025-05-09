@@ -1,20 +1,25 @@
-export default function CardFilme(){
+export default function CardFilme({filme}){
     return(
-        <div className="w-[280px] h-[240px] flex flex-col rounded-lg bg-[#222222]">
-            <div className="w-full h-[67%] rounded-t-lg">
+        <div className="w-[280px] h-[240px] flex flex-col rounded-lg bg-[#222222] border border-transparent hover:scale-120 cursor-pointer hover:border-[#3a364c] transition-all duration-300 ease-in-out">
+            <div className="w-full h-[67%] rounded-t-lg relative">
                 <img 
                 className="w-full h-full rounded-t-lg object-cover"
-                src="https://img.freepik.com/psd-premium/cartaz-de-filme-de-ficcao-cientifica_1117895-318.jpg?w=2000"
-                alt=""
+                src={filme.banner}
+                alt={filme.titulo}
                 />
+                <div className="absolute top-0.5 left-1.5 flex  bg-black/50 rounded-md">
+                
+                    <p className="text-[17px] text-green-500 font-semibold">{filme.nota}</p>
+                    <p>/10</p>
+                </div>
             </div>
 
             <div className="w-full h-[33%] flex flex-col pt-2 px-3 rounded-b-lg">
-                <p className="text-[15px] font-bold">Movie</p>
-                <p className="text-[15px] text-[#8a898c]">Director</p>
+                <p className="text-[15px] font-bold">{filme.titulo}</p>
+                <p className="text-[15px] text-[#8a898c]">{filme.diretor}</p>
                 <div className="w-full flex justify-between">
-                    <p>2025</p>
-                    <div className="px-2 py-0 bg-[#907CDA]/10 text-[#907CDA] rounded-[20px]"><p>Scifi</p></div>
+                    <p className="text-[15px] text-[#8a898c]">{filme.ano}</p>
+                    <div className="px-2 py-0 bg-[#907CDA]/10 text-[#907CDA] rounded-[20px]"><p>{filme.genero}</p></div>
                 </div>
             </div>
         </div>
