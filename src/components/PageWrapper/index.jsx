@@ -6,7 +6,7 @@ export default function PageWrapper({children, showButton = true, showHeader = t
     return (
         <div className="w-full h-full min-h-screen flex flex-col">
             {showHeader && <Header showButton={showButton} />}
-            <div className="W-full h-full min-h-screen bg-gradient-to-t from-[#020304] to-[#181d29] pb-10">
+            <div className="W-full h-full min-h-screen bg-gradient-to-t from-[#020304] to-[#181d29] pb-10wwww">
                 {children}
             </div>
         </div>

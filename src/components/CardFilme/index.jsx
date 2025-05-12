@@ -1,6 +1,13 @@
+import { useRouter } from "next/router"
+
 export default function CardFilme({filme}){
+    const router = useRouter ()
+
+    function handleClickNavigate(){
+        router.push(`/filme/${filme.id}`)
+    }
     return(
-        <div className="w-[280px] h-[240px] flex flex-col rounded-lg bg-[#222222] border border-transparent hover:scale-120 cursor-pointer hover:border-[#3a364c] transition-all duration-300 ease-in-out">
+        <div onClick={handleClickNavigate} className="w-[280px] h-[240px] flex flex-col rounded-lg bg-[#222222] border border-transparent hover:scale-120 cursor-pointer hover:border-[#3a364c] transition-all duration-300 ease-in-out">
             <div className="w-full h-[67%] rounded-t-lg relative">
                 <img 
                 className="w-full h-full rounded-t-lg object-cover"
@@ -15,6 +22,7 @@ export default function CardFilme({filme}){
             </div>
 
             <div className="w-full h-[33%] flex flex-col pt-2 px-3 rounded-b-lg">
+                
                 <p className="text-[15px] font-bold">{filme.titulo}</p>
                 <p className="text-[15px] text-[#8a898c]">{filme.diretor}</p>
                 <div className="w-full flex justify-between">
