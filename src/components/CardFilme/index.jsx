@@ -22,8 +22,8 @@ export default function CardFilme({filme}){
             </div>
 
             <div className="w-full h-[33%] flex flex-col pt-2 px-3 rounded-b-lg">
-                
-                <p className="text-[15px] font-bold">{filme.titulo}</p>
+                {/* truncate: caso o texto seja maior que o espaço, o texto será truncado e adicionado "..." ao final */}
+                <p className="text-[15px] font-bold truncate">{filme.titulo}</p>
                 <p className="text-[15px] text-[#8a898c]">{filme.diretor}</p>
                 <div className="w-full flex justify-between">
                     <p className="text-[15px] text-[#8a898c]">{filme.ano}</p>
